@@ -1,6 +1,9 @@
 <script setup>
+import HeaderVue from "./components/Header.vue";
 </script>
 
 <template>
-  <h1 class="text-6xl font-extrabold">Hola Mundo Tailwind</h1>
+  <div class="container mx-auto mt-20">
+    <HeaderVue />
+  </div>
 </template>
