@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+import { ref } from "vue";
+
+const nombre = ref("");
+</script>
 
 <template>
   <div class="md:w-1/2">
@@ -19,6 +23,8 @@
           type="text"
           placeholder="Mascota"
           class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          :value="nombre"
+          @input="(e) => (nombre = e.target.value)"
         />
       </div>
       <div class="mb-5">
