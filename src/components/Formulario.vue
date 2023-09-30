@@ -23,8 +23,7 @@ const nombre = ref("");
           type="text"
           placeholder="Mascota"
           class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-          :value="nombre"
-          @input="(e) => (nombre = e.target.value)"
+          v-model="nombre"
         />
       </div>
       <div class="mb-5">
