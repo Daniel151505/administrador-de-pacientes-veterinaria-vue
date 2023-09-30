@@ -7,12 +7,13 @@ const alerta = reactive({
   mensaje: "",
 });
 
-const paciente = reactive({
-  nombre: "",
-  propietario: "",
-  email: "",
-  alta: "",
-  sintomas: "",
+defineEmits(["update:nombre"]);
+
+const props = defineProps({
+  nombre: {
+    type: String,
+    required: true,
+  },
 });
 
 const validar = () => {
@@ -48,6 +49,7 @@ const validar = () => {
           type="text"
           placeholder="Mascota"
           class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+          @input="$emit('update:nombre', $event.target.value)"
         />
       </div>
       <div class="mb-5">
