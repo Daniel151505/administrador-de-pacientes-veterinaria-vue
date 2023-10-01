@@ -15,7 +15,18 @@ const paciente = reactive({
 });
 
 const guardarPaciente = () => {
-  pacientes.value.push(paciente);
+  pacientes.value.push({
+    ...paciente,
+  });
+
+  //Reiniciar el objeto
+  Object.assign(paciente, {
+    nombre: "",
+    propietario: "",
+    email: "",
+    alta: "",
+    sintomas: "",
+  });
 };
 </script>
 
