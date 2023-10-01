@@ -47,6 +47,15 @@ const validar = () => {
   }
 
   emit("guardar-paciente");
+  alerta.mensaje = "Paciente Almacenado correctamente";
+  alerta.tipo = "exito";
+
+  setTimeout(() => {
+    Object.assign(alerta, {
+      mensaje: "",
+      tipo: "",
+    });
+  }, 1000000);
 };
 </script>
 
