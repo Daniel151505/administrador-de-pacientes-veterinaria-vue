@@ -31,6 +31,10 @@ const guardarPaciente = () => {
     sintomas: "",
   });
 };
+
+const actualizarPaciente = (id) => {
+    return console.log('editando')
+}
 </script>
 
 <template>
@@ -58,7 +62,11 @@ const guardarPaciente = () => {
             <span class="text-indigo-600 font-bold">Pacientes</span>
           </p>
 
-          <PacienteVue v-for="paciente in pacientes" :paciente="paciente" />
+          <PacienteVue
+            v-for="paciente in pacientes"
+            :paciente="paciente"
+            @actualizar-paciente="actualizarPaciente"
+          />
         </div>
         <p v-else class="mt-20 text-2xl text-center">No hay Pacientes</p>
       </div>
