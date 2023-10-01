@@ -33,8 +33,11 @@ const guardarPaciente = () => {
 };
 
 const actualizarPaciente = (id) => {
-    return console.log('editando')
-}
+  const pacienteEditar = pacientes.value.filter(
+    (paciente) => paciente.id === id
+  )[0];
+  Object.assign(paciente, pacienteEditar);
+};
 </script>
 
 <template>
