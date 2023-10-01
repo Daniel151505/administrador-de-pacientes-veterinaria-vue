@@ -17,15 +17,17 @@ const paciente = reactive({
 });
 
 const guardarPaciente = () => {
-  if(paciente.id) {
-    const { id } = paciente
-    const i = pacientes.value.findIndex((pacienteState) => pacienteState.id === id)
-    pacientes.value[i] = {...paciente}
+  if (paciente.id) {
+    const { id } = paciente;
+    const i = pacientes.value.findIndex(
+      (pacienteState) => pacienteState.id === id
+    );
+    pacientes.value[i] = { ...paciente };
   } else {
     pacientes.value.push({
-    ...paciente,
-    id: uid(),
-  });
+      ...paciente,
+      id: uid(),
+    });
   }
 
   //Reiniciar el objeto
@@ -35,7 +37,7 @@ const guardarPaciente = () => {
     email: "",
     alta: "",
     sintomas: "",
-    id: null
+    id: null,
   });
 };
 
@@ -59,6 +61,7 @@ const actualizarPaciente = (id) => {
         v-model:alta="paciente.alta"
         v-model:sintomas="paciente.sintomas"
         @guardar-paciente="guardarPaciente"
+        :id="paciente.id"
       />
 
       <div class="md:w-1/2 md:h-screen overflow-y-scroll">
