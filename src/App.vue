@@ -95,7 +95,7 @@ const eliminarPaciente = (id) => {
         </h3>
 
         <div v-if="pacientes.length > 0">
-          <p class="text-lg mt-5 text-center mb-10">
+          <p class="font-black text-lg mt-5 text-center mb-10">
             Información de
             <span class="text-indigo-600 font-bold">Pacientes</span>
           </p>
